@@ -21,9 +21,9 @@ export default function Routes(){
         <Switch>
             <Route path='/' exact component={DashboardPage} />
             <Route path='/dashboard' exact component={DashboardPage} />
-            <Route path='/profile' exact component={ProfilePage} />
+            {/* <Route path='/profile' exact component={ProfilePage} /> */}
             <Route path='/alumnos' exact component={AlumnosContainer} />
-            <Route path='/alumno' exact component={ProfilePage} />
+            <Route path='/alumno/:id' exact component={ProfilePage} />
             <Route path='/tables' exact component={TablesPage} />
             <Route path='/maps' exact component={MapsPage} />
             <Route path='/404' exact component={NotFoundPage} />

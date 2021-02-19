@@ -7,8 +7,10 @@ function AlumnoItem({alu}) {
     return (
         <>
             <MDBCol lg="4" className="mb-3">
-                <MDBCard >
-                    <MDBCardImage className="img-fluid" src={src1} />
+                <MDBCard className="shadow-lg bg-body rounded">
+                    <Link to={`/alumno/${alu.id}`}>
+                        <MDBCardImage className="img-fluid" src={src1} />
+                    </Link>
                     <MDBCardBody>
                         <MDBCardTitle className="text-center mb-2 font-bold">{alu.nom}</MDBCardTitle>
                         <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">
@@ -20,7 +22,7 @@ function AlumnoItem({alu}) {
                             {alu.email}
                         </MDBCardText>
                         <div className="row justify-content-end pr-1">
-                            <Link to={`/alumno`} className="btn btn-primary" >Ver...</Link>
+                            <Link to={`/alumno/${alu.id}`} className="btn btn-primary" >Ver...</Link>
                         </div>
                     </MDBCardBody>
                 </MDBCard>

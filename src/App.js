@@ -9,11 +9,11 @@ export default function App() {
   
     return (
         <div className="flexible-content">
-          <TopNavigation />
+          {/* <TopNavigation /> */}
           <SideNavigation />
-          <main id="content" className="p-5">
+          {/* <main id="content" className="p-5"> */}
             <Routes />
-          </main>
+          {/* </main> */}
           <Footer />
         </div>
     );

@@ -4,32 +4,33 @@ import  {getFirestore}  from '../../utils/firebaseApp'
 import AlumnoItem from './AlumnoItem';
 
 
-function AlumnosList() {
+function AlumnosList({alum = []}) {
 
-    const [aLumnoList, setALumnoList] = useState(null)
-    const [loading, setLoading] = useState(false)
+    //const [aLumnoList, setALumnoList] = useState(null)
+    
 
-    const db = getFirestore()
+    //const db = getFirestore()
 
-    useEffect(()=>{
-        db.collection('alumnos').get()
-        .then(resp => {
-            console.log(resp.docs[0].data());
-            setALumnoList(resp.docs.map(alu => ({...alu.data(), id: alu.id})))
-            setLoading(true)
-        })
-    },[])
+    // useEffect(()=>{
+    //     db.collection('alumnos').get()
+    //     .then(resp => {
+    //         //console.log(resp.docs[0].data());
+    //         setALumnoList(resp.docs.map(alu => ({...alu.data(), id: alu.id})))
+    //         setLoading(true)
+    //     })
+    // },[estadoLista])
 
-    console.log(aLumnoList);
+    //console.log(alum);
+    if (alum.length < 1) {
+        return <h2>No Hay alumnos registrados.</h2>
+    }
     return (
-        <>
-            {!loading ? <h2>Cargando...</h2> :
-                <MDBRow className="justify-content-center">
-                    {aLumnoList.map(alu => (
-                        <AlumnoItem alu={alu} />
-                    ))}
-                </MDBRow>
-            }        
+        <>            
+            <MDBRow className="justify-content-center">
+                {alum.map(alu => (
+                    <AlumnoItem key={alu.id} alu={alu} />
+                ))}
+            </MDBRow>                    
         </>
     )
 }

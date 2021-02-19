@@ -8,7 +8,8 @@ import './TopNavigation.css'
 export default function TopNavigation(){ 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+            {/* fixed="top" */}
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >  
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
