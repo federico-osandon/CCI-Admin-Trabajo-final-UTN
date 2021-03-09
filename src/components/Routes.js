@@ -6,6 +6,7 @@ import TablesPage from './pages/TablesPage';
 import MapsPage from './pages/MapsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import AlumnoItem from './Alumnos/AlumnoItem';
+import MateriasListContainer from './materias/MateriasListContainer';
 //import AlumnosContainer from './Alumnos/AlumnosContainer'
 
 //const Home = lazy(() => import('./routes/Home'));
@@ -24,6 +25,7 @@ export default function Routes(){
             {/* <Route path='/profile' exact component={ProfilePage} /> */}
             <Route path='/alumnos' exact component={AlumnosContainer} />
             <Route path='/alumno/:id' exact component={ProfilePage} />
+            <Route path='/materias' exact component={MateriasListContainer} />
             <Route path='/tables' exact component={TablesPage} />
             <Route path='/maps' exact component={MapsPage} />
             <Route path='/404' exact component={NotFoundPage} />
