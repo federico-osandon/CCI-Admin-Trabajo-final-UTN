@@ -1,23 +1,41 @@
-import React from 'react';
-import Routes from '../src/components/Routes';
-import TopNavigation from './components/TopNavigation';
-import SideNavigation from './components/SideNavigation';
-import Footer from './components/Footer';
-import './index.css';
+import React, { useState, lazy, Suspense } from "react";
+import "./App.css";
+//import OftadehRoutes from "./components/OftadehRoutes/OftadehRoutes";
+import { ThemeProvider } from "@material-ui/core/styles";
+import getTheme from "./oftadeh-configs/themeConfig";
+import ThemeContext from "./context/ThemeContext/ThemeContext";
+import {AuthProvider} from "./context/ Authentication/authState";
 
-export default function App() { 
+const OftadehRoutes = lazy( ()=> import("./components/OftadehRoutes/OftadehRoutes") )
+
+const App = () => {
+  const curThemeName = localStorage.getItem("appTheme") || "light";
+
+  const [themeType, setThemeType] = useState(curThemeName);
+
+  const setThemeName = themeName => {
+    localStorage.setItem("appTheme", themeName);
+    setThemeType(themeName);
+  };
+
+  const theme = getTheme({
+    paletteType: themeType
+  });
+
   
-    return (
-        <div className="flexible-content">
-          {/* <TopNavigation /> */}
-          <SideNavigation />
-          {/* <main id="content" className="p-5"> */}
-            <Routes />
-          {/* </main> */}
-          <Footer />
-        </div>
-    );
- 
-}
+  return (
+    <AuthProvider>
+      <ThemeContext.Provider value={{ setThemeName, curThemeName }}>
+        <ThemeProvider theme={theme}>
+          <Suspense fallback={null}>
+            <div className="App">
+              <OftadehRoutes />
+            </div>
+          </Suspense>
+        </ThemeProvider>
+      </ThemeContext.Provider>
+    </AuthProvider>
+  );
+};
 
-
+export default App;
