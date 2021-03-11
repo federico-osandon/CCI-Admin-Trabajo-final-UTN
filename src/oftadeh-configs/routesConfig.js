@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 import { DashboardPageConfig } from "../pages/dashboard/DashboardPageConfig";
+import { MateriasPageConfig } from '../pages/materias/MateriasPageConfig'
 import { AboutPageConfig } from "../pages/about/AboutPageConfig";
 import { AddPostPageConfig } from "../pages/posts/add-post/AddPostPageConfig";
 import { AllPostsPageConfig } from "../pages/posts/all-posts/AllPostsPageConfig";
@@ -15,6 +16,7 @@ import { Error500PageConfig } from "../pages/errors/500/Error500PageConfig";
 
 const routeConfigs = [
   ...DashboardPageConfig.routes, // Ruta '/', DashBoardPages, listo.
+  ...MateriasPageConfig.routes,
   ...AllPostsPageConfig.routes,// Ruta "/pages/posts", AllPostsPage, listo.
   ...AddPostPageConfig.routes,// Ruta "/pages/posts/add-post", AddPostPage, listo.
   ...CalendarPageConfig.routes,// Ruta "/pages/calendar", CalendarPage, listo.
