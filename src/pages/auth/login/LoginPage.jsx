@@ -58,8 +58,8 @@ const LoginPage = props => {
             password !== ''                              
         ){            
             db.signInWithEmailAndPassword(email, password)
-            .then(resp => {  
-                console.log(resp)              
+            .then(async resp => {  
+                await console.log(resp)              
                 history.push("/")
             })
             .catch(err => {               

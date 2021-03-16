@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import {getAuth} from '../firebase/firebaseConfig';
 
 function useAutenticacion() {
-    const [ usuarioAutenticado, guardarUsuarioAutenticado] = useState(null);
+    const [ usuarioAutenticado, guardarUsuarioAutenticado] = useState(JSON.parse(sessionStorage.getItem('usuario')));
 
-    useEffect(() => {
+    useEffect( () => {
         const unsuscribe = getAuth().onAuthStateChanged(user => {
             if( user ) {
                 guardarUsuarioAutenticado(user);
@@ -18,3 +18,5 @@ function useAutenticacion() {
     return usuarioAutenticado;
 }
 export default useAutenticacion;
+
+// const usuario= 

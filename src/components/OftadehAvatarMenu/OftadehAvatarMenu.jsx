@@ -44,6 +44,7 @@ const OftadehAvatarMenu = props => {
   };
 
   const handlerSesion = async () => {
+    sessionStorage.removeItem('usuario')
     await getAuth().signOut()   
   }
 
