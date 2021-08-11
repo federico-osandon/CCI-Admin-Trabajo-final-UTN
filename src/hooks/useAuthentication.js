@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {getAuth} from '../firebase/firebaseConfig';
 
 function useAutenticacion() {
-    const [ usuarioAutenticado, guardarUsuarioAutenticado] = useState(JSON.parse(sessionStorage.getItem('usuario')));
+    const usuario = async () =>{//para probar
+        return await localStorage.getItem('usuario')
+    }
+    
+    const [ usuarioAutenticado, guardarUsuarioAutenticado] = useState(usuario)
 
     useEffect( () => {
         const unsuscribe = getAuth().onAuthStateChanged(user => {
@@ -12,7 +16,7 @@ function useAutenticacion() {
                 guardarUsuarioAutenticado(null);
             }
         });
-        return async () => await unsuscribe();
+        return async () => await unsuscribe()
     }, []);
 
     return usuarioAutenticado;

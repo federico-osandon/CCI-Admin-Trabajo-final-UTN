@@ -3,9 +3,13 @@ import { Redirect } from "react-router-dom";
 
 import { DashboardPageConfig } from "../pages/dashboard/DashboardPageConfig";
 import { MateriasPageConfig } from '../pages/materias/MateriasPageConfig'
-import { AboutPageConfig } from "../pages/about/AboutPageConfig";
-import { AddPostPageConfig } from "../pages/posts/add-post/AddPostPageConfig";
-import { AllPostsPageConfig } from "../pages/posts/all-posts/AllPostsPageConfig";
+import { AlumnosPageConfig } from '../pages/alumnos/AlumnosPageConfig'
+import { AlumnoPageConfig } from '../pages/Alumno/AlumnoPageConfig.jsx'
+import { MateriaPageConfig } from '../pages/Materia/MateriaPageConfig'
+import { ProfesoresPageConfig } from '../pages/profesores/ProfesoresPageConfig'
+// import { AboutPageConfig } from "../pages/about/AboutPageConfig";
+// import { AddPostPageConfig } from "../pages/posts/add-post/AddPostPageConfig";
+// import { AllPostsPageConfig } from "../pages/posts/all-posts/AllPostsPageConfig";
 import { CalendarPageConfig } from "../pages/calendar/CalendarPageConfig";
 import { ForgotPasswordPageConfig } from "../pages/auth/forgot-password/ForgotPasswordPageConfig";
 import { LoginPageConfig } from "../pages/auth/login/LoginPageConfig";
@@ -17,15 +21,19 @@ import { Error500PageConfig } from "../pages/errors/500/Error500PageConfig";
 const routeConfigs = [
   ...DashboardPageConfig.routes, // Ruta '/', DashBoardPages, listo.
   ...MateriasPageConfig.routes,
-  ...AllPostsPageConfig.routes,// Ruta "/pages/posts", AllPostsPage, listo.
-  ...AddPostPageConfig.routes,// Ruta "/pages/posts/add-post", AddPostPage, listo.
-  ...CalendarPageConfig.routes,// Ruta "/pages/calendar", CalendarPage, listo.
+  ...AlumnosPageConfig.routes,
+  ...AlumnoPageConfig.routes,
+  ...MateriaPageConfig.routes,
+  ...ProfesoresPageConfig.routes,
+  // ...AllPostsPageConfig.routes,// Ruta "/pages/posts", AllPostsPage, listo.
+  // ...AddPostPageConfig.routes,// Ruta "/pages/posts/add-post", AddPostPage, listo.
+  //...CalendarPageConfig.routes,// Ruta "/pages/calendar", CalendarPage, listo.
   ...ForgotPasswordPageConfig.routes,// Ruta "/pages/auth/forgot-password", ForgotPasswordPage
   ...LoginPageConfig.routes,// Ruta "/pages/auth/login", LoginPage
   ...RegisterPageConfig.routes,// Ruta "/pages/auth/register", RegisterPage
   ...Error404PageConfig.routes,//Ruta "/pages/errors/error-404",Error404Page
   ...Error500PageConfig.routes, // Ruta "/pages/errors/error-500", Error500Page
-  ...AboutPageConfig.routes // Ruta "/pages/about", AboutPage
+  // ...AboutPageConfig.routes // Ruta "/pages/about", AboutPage
   // ...DocumentationConfig.routes
 ];
 

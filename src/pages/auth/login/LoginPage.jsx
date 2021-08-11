@@ -33,6 +33,7 @@ const LoginPage = props => {
     const [ messageError, setMessgaeError ] = useState({
         msg: ''
     })
+    
     const classes = useStyles();
     const { history } = props;
 
@@ -125,7 +126,7 @@ const LoginPage = props => {
                 >
                     Login
                 </Button>
-                <Button
+                {/* <Button
                     variant="outlined"
                     color="primary"
                     fullWidth
@@ -133,10 +134,10 @@ const LoginPage = props => {
                     onClick={() => history.push("/pages/auth/register")}
                 >
                     Register Now!
-                </Button>
+                </Button> */}
                 </div>
             </form>
-            <Typography variant="caption">&copy; Oftadeh | React Admin</Typography>
+            <Typography variant="caption">&copy; CCI | React Admin</Typography>
             </div>
             {/* <Typography variant="h3" gutterBottom>
             Oops! <span className={classes.statusCode}>404</span>

@@ -59,7 +59,7 @@ const ForgotPasswordPage = (props) => {
             </Button>
           </div>
         </form>
-        <Typography variant="caption">&copy; Oftadeh | React Admin</Typography>
+        <Typography variant="caption">&copy; CCI | Admin</Typography>
       </div>
     </div>
   );

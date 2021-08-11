@@ -31,7 +31,8 @@ const DashboardPage = (props) => {
   const classes = useStyles();
 
   const { usuario } = useContext(AuthContext)
-  sessionStorage.setItem('usuario:', usuario)
+
+  localStorage.setItem('usuario:', JSON.stringify(usuario))
   //const history  = useHistory()
   //console.log(history);
   console.log(usuario);

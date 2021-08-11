@@ -158,7 +158,7 @@ const RegisterPage = props => {
                         </Button>
                         </div>
                     </form>
-                    <Typography variant="caption">&copy; Oftadeh | React Admin</Typography>
+                    <Typography variant="caption">&copy; CCI | React Admin</Typography>
                 </div>
                 {/* <Typography variant="h3" gutterBottom>
                 Oops! <span className={classes.statusCode}>404</span>

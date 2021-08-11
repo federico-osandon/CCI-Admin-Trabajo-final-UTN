@@ -79,8 +79,8 @@ const columns = [
     filterType: "checkbox"
   };
 
-function MateriasPage(props) {
-    const [materias, setMaterias] = useState([])
+function ProfesoresPage(props) {
+    const [profesores, setProfesores] = useState([])
     const [loading, setLoading] = useState(false)
     const [actualizarListadoMaterias, setActualizarListadoMaterias] = useState(false)
 
@@ -97,26 +97,22 @@ function MateriasPage(props) {
 
     useEffect(()=>{
         const db = getFirestore()
-        db.collection('materias').where('activa', '==', 2).get() //.where('activa', '==', 2)
+        db.collection('profesores').get()
         .then(resp => {
-          setMaterias(resp.docs.map(mat => ({ ...mat.data(), id: mat.id })))
+          setProfesores(resp.docs.map(pro => ({ ...pro.data(), id: pro.id })))
           setLoading(true)
         })
-        return () => {
-          console.log('cleaned up');
-          
-       }
         //cambiarEstadoListaAlummno()
     },[actualizarListadoMaterias])
 
-    console.log(materias);
+    console.log(profesores);
     return (
         <>
             <OftadehLayout>
-                <h1>Materias</h1>
+                <h1>Profesores</h1>
                 <OftadehBreadcrumbs path={history} />
                 <Paper style={{ padding: "5px" }}>
-                <SimpleAccordionForm NombreBotonDesplegable="Nueva Materia">
+                <SimpleAccordionForm NombreBotonDesplegable="AGREGAR PROFESOR">
                     <FormMateria cambiarEstadoMateria={cambiarEstadoListaMaterias}/>
                 </SimpleAccordionForm> 
                 </Paper>
@@ -128,7 +124,7 @@ function MateriasPage(props) {
                     //     columns={columns}
                     //     options={options}
                     // />
-                    <TableMaterias data={materias} cambiarEstadoMateria={cambiarEstadoListaMaterias}/>
+                    <TableMaterias data={profesores}/>
                     :
                     <Box display="flex" justifyContent="center" m={1} p={1}>
                       <CircularProgress disableShrink />
@@ -139,4 +135,4 @@ function MateriasPage(props) {
     )
 }
 
-export default MateriasPage
+export default ProfesoresPage

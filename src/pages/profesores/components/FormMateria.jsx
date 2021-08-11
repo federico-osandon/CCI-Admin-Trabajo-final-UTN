@@ -26,7 +26,7 @@ export default function FormMateria({cambiarEstadoMateria}) {
     }
 
     const createMateriaFirestore = async () => {
-        await db.collection('materias').add(formDataMateria)        
+        await db.collection('profesores').add(formDataMateria)        
         .then((res) => {
             console.log(res);  
                            
@@ -60,7 +60,7 @@ export default function FormMateria({cambiarEstadoMateria}) {
                         required
                         id="nombre"
                         name="nombre"
-                        label="Nombre de la Materia"
+                        label="Nombre del Profesor"
                         fullWidth
                         autoComplete="given-name"
                         value={formDataMateria.nombre}
@@ -69,17 +69,17 @@ export default function FormMateria({cambiarEstadoMateria}) {
                     
                     <Grid item xs={12} sm={6}>
                         <TextField
-                        type="text"
+                        type="email"
                         required
-                        id="aula"
-                        name="aula"                        
-                        label="Aula"
+                        id="email"
+                        name="email"                        
+                        label="Email"
                         fullWidth
                         autoComplete="given-name"
                         value={formDataMateria.aula}
                         />
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <TextField
                         type="text"
                         required
@@ -114,7 +114,7 @@ export default function FormMateria({cambiarEstadoMateria}) {
                         autoComplete="shipping address-line1"
                         value={formDataMateria.horario}
                         />
-                    </Grid>                   
+                    </Grid>                    */}
                 </Grid>
                 <Button
                     type="submit"
@@ -123,7 +123,7 @@ export default function FormMateria({cambiarEstadoMateria}) {
                     color="primary"
                     className={classes.submit}
                 >
-                    REGISTRAR MATERIA
+                    REGISTRAR PROFESOR
                 </Button>
             </form>
         </>
@@ -131,11 +131,8 @@ export default function FormMateria({cambiarEstadoMateria}) {
 }
 const initialValue = {
     activa:2,
-    aula: '',
-    dia: '',
-    fCreacion: firebase.firestore.Timestamp.fromDate(new Date()),   // se crea por defecto 
-    horario:'',   
+    email: '',    
+    fCreacion: firebase.firestore.Timestamp.fromDate(new Date()),   // se crea por defecto        
     nombre: '',
-    profesor: '',   
-    
+        
 }
