@@ -99,7 +99,7 @@ compiles the application into /build directory
 
 ### Deployment
 
-Checkout at Facebook's create-react-app documentation:[Deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Checkout at Facebook's create-react-app documentation:[Deployment](https://jolly-cori-beaa5f.netlify.app)
 
 <br />
 
